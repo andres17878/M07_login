@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuari</title>
+</head>
+<body>
+    <h1> Crear un usuari </h1>
+    <form action="../crear_usuari/index.php" method="POST">
+        <div>
+            <label>ID</label>
+            <input type="text" name="id">
+        </div>
+        <div>
+            <label>NAME</label>
+            <input type="text" name="nombre">
+        </div>
+        <div>
+            <label>SURNAME</label>
+            <input type="text" name="apellido">
+        </div>
+        <div>
+            <label>
+                <select name="rol">
+                    <option value="Professorat">Professorat</option>
+                    <option value="Alumnat">Alumnat</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="text" name="password">
+        </div>
+        <div>
+            <label>email</label>
+            <input type="text" name="email">
+        </div>
+        <div>
+            <label for="active">Active</label>
+            <input type="checkbox" name="active">
+        </div>
+        <div>
+            <button type="submit" name="send">SEND</button>
+        </div>
+        <div>
+            <a href="login.html">Iniciar sessió</a>
+        </div>
+    </form>    
+</body>
+</html>
