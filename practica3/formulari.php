@@ -1,6 +1,6 @@
 <?php
 
-    include('../dbConf.php');
+    include('/practica3/dbConf.php');
 
     if (isset($_POST['send'])){
         $id = $_POST['id'];
@@ -25,7 +25,7 @@
     $connect->query($insert);
 
     
-    header("Location: ../views/formulari.html");
+    header("Location: /practica3/formulari.html");
 
     
 
