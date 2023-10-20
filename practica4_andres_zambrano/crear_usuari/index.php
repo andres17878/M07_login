@@ -24,7 +24,15 @@ if (isset($_POST['send'])){
 
     
     //Introduim les dades de consulta a la taula user
-    $conn->query($consulta);
+    
+    $correcto = $conn->query($consulta);
+
+    if($correcto){
+        include('../views/index.html');
+        echo 'Usuari creat correctament';
+    }else{
+        echo 'Error al crear usuari';
+    }
     
     header("Location: ../views/index.html");
     
