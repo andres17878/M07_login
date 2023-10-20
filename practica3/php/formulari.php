@@ -1,8 +1,7 @@
 <?php
+    include('../dbConf.php');
 
-    include('/practica3/dbConf.php');
-
-    if (isset($_POST['send'])){
+    if (isset($_POST['submit'])){
         $id = $_POST['id'];
         $rol = $_POST['rol'];
         $nom = $_POST['name'];
@@ -10,24 +9,24 @@
         $contrasenya = $_POST['password'];
         $correu = $_POST['mail'];
         $actiu = $_POST['active'];
-    }
-
-    if ($actiu = 'si'){
-        $actiu = 1;
+    
+    if ($actiu = 1){
+        $actiu = true;
     } else {
-        $actiu = 0;
+        $actiu = false;
     }
-
 
     $insert = "INSERT INTO user (id, rol, name, surname, password, email, active) 
     VALUES ('$id', '$rol', '$nom', '$cognom', '$contrasenya', '$correu', '$actiu')";
 
-    $connect->query($insert);
 
-    
-    header("Location: /practica3/formulari.html");
+if ($connect->query($insert) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $insert . "<br>" . $connect->error;
+  }
+}
 
-    
-
+    $connect->close();
+    header("Location: ../html/formulari.html");
 ?>
-
