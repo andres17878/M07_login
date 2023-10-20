@@ -5,12 +5,15 @@
     $db_nombre = "Users";
     $db_usuario = "root";
     $db_passwd = "";
-
-    $conn = mysqli_connect($db_host, $db_usuario, $db_passwd, $db_nombre );
-
-    if (mysqli_connect_errno()) {
-        printf("Falló la conexión: %s\n", mysqli_connect_error());
-        exit();
+    try {
+      $conn = new mysqli($db_host, $db_usuario, $db_passwd, $db_nombre);
+  
+      // Check connection
+      if ($conn->connect_error) {
+          throw new Exception("Connection failed: " . $conn->connect_error);
       }
-
+    } catch (Exception $e) {
+      die('Caught exception: '.  $e->getMessage() ."\n");
+  }
+  
 ?>
