@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -10,13 +9,19 @@
 
     <h1>Formulari</h1>
 
-    <form method="GET" action="formulari.php">
+    <form method="POST" action="formulari.php">
 
         <label>ID</label><br>
-        <input type="text" name="id"><br>
+        <input type="text" name="id"><br><br>  
 
-        <label>Rol</label><br>
-        <input type="text" name="rol"><br>
+        <label>
+            <select name="rol">
+                <option value="Professor">Professor</option>
+                <option value="Alumne">Alumne</option>
+            </select>
+        </label>
+        <br><br>
+        
 
         <label>Nom</label><br>
         <input type="text" name="name"><br>
@@ -31,9 +36,9 @@
         <input type="text" name="mail"><br>
 
         <label>Actiu</label><br>
-        <input type="text" name="active"><br>
+        <input type="checkbox" name="active"><br>
 
-        <input type="submit" name="enviar">
+        <button type="submit" name="submit">Okay</button>
     </form>
 </body>
 </html>
