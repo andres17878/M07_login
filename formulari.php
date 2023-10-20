@@ -1,22 +1,33 @@
 <?php
 
-    $id = $_POST['id'];
-    $rol = $_POST['rol'];
-    $nom = $_POST['name'];
-    $cognom = $_POST['surname'];
-    $contrasenya = $_POST['password'];
-    $correu = $_POST['mail'];
-    $actiu = $_POST['active'];
+    include('../dbConf.php');
 
-    $insert = "INSERT INTO user (id, rol, name, surname, password, email, active) VALUES ($id, $rol, $nom, $cognom, $contrasenya, $correu, $actiu)";
+    if (isset($_POST['send'])){
+        $id = $_POST['id'];
+        $rol = $_POST['rol'];
+        $nom = $_POST['name'];
+        $cognom = $_POST['surname'];
+        $contrasenya = $_POST['password'];
+        $correu = $_POST['mail'];
+        $actiu = $_POST['active'];
+    }
 
-    $conexxio = mysqli_connect('localhost:4306', 'root', '', 'user');
+    if ($actiu = 'si'){
+        $actiu = 1;
+    } else {
+        $actiu = 0;
+    }
+
+
+    $insert = "INSERT INTO user (id, rol, name, surname, password, email, active) 
+    VALUES ('$id', '$rol', '$nom', '$cognom', '$contrasenya', '$correu', '$actiu')";
+
+    $connect->query($insert);
 
     
-    mysqli_query($conexxio, $insert);
-    
+    header("Location: ../views/formulari.html");
 
-    mysqli_close($conexxio);
+    
 
 ?>
 
