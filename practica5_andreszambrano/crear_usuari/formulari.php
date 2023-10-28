@@ -28,30 +28,28 @@ if (isset($_POST['send'])){
     $correcto = $conn->query($consulta);
 
     if($correcto){
-        if($_COOKIE['idioma'] == 'ca'){
+        if($_COOKIE['idiomas'] == 'ca'){
             include('../views_ca/formulari.html');
             echo 'Usuari creat correctament';
-        }else if($_COOKIE['idioma'] == 'en'){
+        }else if($_COOKIE['idiomas'] == 'en'){
             include('../views_en/formulari.html');
             echo 'User created correctly';
-        }else if($_COOKIE['idioma'] == 'es'){
+        }else if($_COOKIE['idiomas'] == 'es'){
             include('../views_es/formulari.html');
             echo 'Usuario creado correctamente';
         }
     } else{
-        if($_COOKIE['idioma'] == 'ca'){
+        if($_COOKIE['idiomas'] == 'ca'){
             include('../views_ca/formulari.html');
             echo 'Error al crear usuari';
-        }else if($_COOKIE['idioma'] == 'en'){
+        }else if($_COOKIE['idiomas'] == 'en'){
             include('../views_en/formulari.html');
             echo 'Error creating user';
-        }else if($_COOKIE['idioma'] == 'es'){
+        }else if($_COOKIE['idiomas'] == 'es'){
             include('../views_es/formulari.html');
             echo 'Error al crear usuario';
         }
     }
-    
-    header("Location: ../views_ca/formulari.html");
-    
+        
 }
 ?>
