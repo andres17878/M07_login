@@ -9,11 +9,11 @@
 <body>
     <?php
     if ($_COOKIE['sel_idioma'] == 'es') {
-        header('Location: LoginSpanish.html');
+        header('Location: ../vistes_es/LoginSpanish.html');
     }else if ($_COOKIE['sel_idioma'] == 'cat') {
-        header('Location: LoginCatalan.html');
+        header('Location: ../vistes_cat/LoginCatalan.html');
     }else if ($_COOKIE['sel_idioma'] == 'eng') {
-        header('Location: LoginEnglish.html');
+        header('Location: ../vistes_eng/LoginEnglish.html');
     }
     ?>
 
